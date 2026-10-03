@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Dr. Sanjay Kulkarni - KhetConnect</title>
+    <link rel="stylesheet" href="111.css">
+    <!-- Google Fonts for clean modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Chat Window Wrapper -->
+    <div class="chat-container">
+
+        <!-- 1. TOP HEADER (DOCTOR PROFILE & ACTIONS) -->
+        <header class="chat-header">
+            <div class="header-left">
+                <a href="1.html" class="back-btn" title="Go Back">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </a>
+                
+                <div class="doctor-avatar-wrapper">
+                    <img src="https://www.medijourney.co.in/uploads/51ba570fe68fc088e0a942bdf8700cdce7eb8b1e/1752129871Medijourney-Doctor-Profile-Image-320X320-3.webp" alt="Dr. Sanjay Kulkarni" class="doctor-avatar">
+                    <span class="online-badge" title="Online Now"></span>
+                </div>
+
+                <div class="doctor-info">
+                    <div class="doc-title-row">
+                        <h2 class="doctor-name">Dr. Sanjay Kulkarni</h2>
+                        <span class="verified-badge" title="Verified Veterinary Doctor">✓ Verified</span>
+                    </div>
+                    <p class="doctor-status">Senior Veterinary Specialist • <span class="status-active">Online Now</span></p>
+                </div>
+            </div>
+
+            <!-- Call & Options Action Buttons -->
+            <div class="header-actions">
+                <button class="action-btn" title="Voice Call" onclick="alert('Starting voice call with Dr. Sanjay Kulkarni...')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </button>
+                <button class="action-btn" title="Video Consultation" onclick="alert('Initiating HD Video Consultation...')">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                </button>
+                <button class="action-btn" title="More Options">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- 2. CHAT CONVERSATION BODY -->
+        <main class="chat-body" id="chatBody">
+            
+            <!-- Security / Privacy Notice -->
+            <div class="encryption-notice">
+                <span>🔒 Messages are encrypted & verified by KhetConnect Tele-Vet Service</span>
+            </div>
+
+            <!-- Date Separator -->
+            <div class="date-badge"><span>Today</span></div>
+
+            <!-- Doctor Intro Card -->
+            <div class="consultation-card">
+                <p>🩺 <strong>Consultation Session Started</strong></p>
+                <span>Fee: ₹0 (Free under KCC Welfare) • Animal: General Livestock</span>
+            </div>
+
+            <!-- Farmer Message (Outgoing - Right) -->
+            <div class="message outgoing">
+                <div class="msg-bubble">
+                    <p>Namaste Sir 🙏</p>
+                    <span class="msg-time">10:14 AM <span class="checkmarks">✓✓</span></span>
+                </div>
+            </div>
+
+            <!-- Doctor Message 1 (Incoming - Left) -->
+            <div class="message incoming">
+                <div class="msg-bubble">
+                    <p>Namaste ji! 🙏</p>
+                    <span class="msg-time">10:15 AM</span>
+                </div>
+            </div>
+
+            <!-- Doctor Message 2 (Incoming - Left) -->
+            <div class="message incoming">
+                <div class="msg-bubble">
+                    <p>How can I help you today? Please tell me which animal has a problem and describe the symptoms.</p>
+                    <span class="msg-time">10:15 AM</span>
+                </div>
+            </div>
+
+            <!-- Quick Symptom Tags (Helps Farmers Respond Instantly) -->
+            <div class="quick-tags">
+                <button class="tag-btn" onclick="sendQuickText('मेरी गाय चारा नहीं खा रही है (Cow not eating)')">🐮 गाय चारा नहीं खा रही</button>
+                <button class="tag-btn" onclick="sendQuickText('पशु को बुखार है (Fever in livestock)')">🌡️ पशु को बुखार है</button>
+                <button class="tag-btn" onclick="sendQuickText('दूध उत्पादन कम हो गया है (Milk production dropped)')">🥛 दूध कम हो गया</button>
+            </div>
+
+            <!-- Typing Indicator (Hidden by default, triggered by JS) -->
+            <div class="message incoming typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="msg-bubble typing-bubble">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- 3. BOTTOM INPUT BAR -->
+        <footer class="chat-input-bar">
+            <!-- Attachment Options -->
+            <button class="tool-btn" title="Send prescription or photo" onclick="document.getElementById('fileUpload').click()">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+            </button>
+            <input type="file" id="fileUpload" style="display: none;" accept="image/*,.pdf" onchange="alert('Photo attached: ' + this.files[0].name)">
+
+            <button class="tool-btn" title="Camera" onclick="alert('Camera opening...')">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </button>
+
+            <!-- Text Input -->
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="Enter your message or ask Dr. Kulkarni..." autocomplete="off">
+            </div>
+
+            <!-- Voice Record Button -->
+            <button class="tool-btn voice-btn" id="voiceBtn" title="Voice Message (Record)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </button>
+
+            <!-- Send Button -->
+            <button class="send-btn" id="sendBtn" title="Send Message">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </footer>
+
+    </div>
+
+    <!-- Script for Live Chat & Doctor Auto-Reply -->
+    <script src="111.js"></script>
+</body>
+</html>

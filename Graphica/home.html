@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KhetConnect - Empowering Farmers</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body id="mainbody">
+
+  <!-- 1. Interactive Ambient Cursor Glow Torch -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- 2. Interactive Golden Fireflies & Pollen Particles Canvas -->
+  <canvas id="firefliesCanvas"></canvas>
+
+  <!-- 3. Live Floating Weather & Mandi Ticker -->
+  <div class="live-ticker-bar">
+    <div class="ticker-content">
+      <span class="pulse-live">🟢 LIVE</span>
+      <span id="liveClock">--:--:--</span>
+      <span class="ticker-sep">•</span>
+      <span>🌦️ Mausam: <strong>28°C (Khili Dhoop)</strong></span>
+      <span class="ticker-sep">•</span>
+      <span>🌾 Gehun (Wheat): <strong class="green-glow">₹2,275/qtl ▲</strong></span>
+      <span class="ticker-sep">•</span>
+      <span>🌱 Sarson (Mustard): <strong class="green-glow">₹5,450/qtl ▲</strong></span>
+      <span class="ticker-sep">•</span>
+      <span>📞 Helpline: <strong>1800-180-1551</strong></span>
+    </div>
+  </div>
+
+  <!-- 4. Hero Section with 3D Parallax Farm Image -->
+  <section class="hero-container" id="heroSection">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-dim-overlay"></div>
+
+    <!-- Farmer Profile Badge (Top Right) -->
+    <div class="profile-badge">
+      <img src="farmer.jpeg" alt="Farmer" class="profile-pic" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'" />
+      <div class="profile-details">
+        <span class="profile-name">Rameshwar Pratap Singh</span>
+        <span class="profile-handle">@rameshwar9988</span>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Main Hero Headings & Slogan -->
+    <div class="hero-sketch-layout">
+
+
+
+
+
+      <h1 class="main-title">Welcome to <span>KhetConnect</span></h1>
+
+
+
+      <p class="sub-title">Connecting farmers, empowering agriculture.</p>
+
+      <!-- 3 Animated Stat Boxes with Number Count-Up -->
+      <div class="stats-row">
+        <!-- Box 1 -->
+        <div class="stat-card tilt-element">
+
+
+          
+          <div class="stat-icon">👥</div>
+          <div class="stat-title">Trusted by</div>
+          <div class="stat-highlight counter-val" data-target="100000" data-suffix=" Lakh+ Farmers">0</div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="stat-card tilt-element">
+          <div class="stat-icon">🚜</div>
+          <div class="stat-highlight counter-val" data-target="10000" data-suffix="+ Tractors">0</div>
+          <div class="stat-title">&amp; Machines on Rent</div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="stat-card tilt-element">
+          <div class="stat-icon">💰</div>
+          <div class="stat-highlight counter-val" data-target="20" data-prefix="₹" data-suffix=" Cr+">0</div>
+          <div class="stat-title">Mandi Produce Sold Directly</div>
+        </div>
+      </div>
+
+      <!-- Slogan Line with Rotating Dynamic Text -->
+      <div class="slogan-line">
+        <span id="sloganPrefix">Smart Kheti, Behtar Munafa</span> • <span class="hindi-accent" id="sloganSuffix">बीज से बाज़ार तक</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. The 9 Services Buttons Grid (Centered & Responsive) -->
+  <section class="services-section">
+    <div class="services-grid">
+      <a href="1.html" class="service-link">
+        <button class="button tilt-element"><span>🩺 Consult a Doctor</span></button>
+      </a>
+      <a href="2.html" class="service-link">
+        <button class="button tilt-element"><span>🌾 Grain prices offered</span></button>
+      </a>
+      <a href="3.html" class="service-link">
+        <button class="button tilt-element"><span>🧪 Fertilizers &amp; Pesticides</span></button>
+      </a>
+      <a href="4.html" class="service-link">
+        <button class="button tilt-element"><span>🐄 Livestock for sale</span></button>
+      </a>
+      <a href="5.html" class="service-link">
+        <button class="button tilt-element"><span>🚜 Equipment for Rent</span></button>
+      </a>
+      <a href="6.html" class="service-link">
+        <button class="button tilt-element"><span>⚙️ Farming Equipment</span></button>
+      </a>
+      <a href="7.html" class="service-link">
+        <button class="button tilt-element"><span>🌱 Seeds and Raw materials</span></button>
+      </a>
+      <a href="8.html" class="service-link">
+        <button class="button tilt-element"><span>🛡️ Crop Insurance</span></button>
+      </a>
+      <a href="9.html" class="service-link">
+        <button class="button tilt-element"><span>🏛️ Government Schemes &amp; Loans</span></button>
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. Full-Width Compact Footer -->
+  <footer class="footer-bar">
+    <div class="footer-header">
+      <span class="footer-brand">🌾 Khet<span>Connect</span></span>
+      <span class="footer-tagline">• Connecting Farmers, Empowering Agriculture</span>
+    </div>
+    <div class="footer-links-row">
+      <a href="tel:18001801551" class="footer-box">📞 1800-180-1551</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="footer-box whatsapp">💬 WhatsApp</a>
+      <a href="mailto:khetconnect@gmail.com" class="footer-box">✉️ khetconnect@gmail.com</a>
+      <a href="https://twitter.com" target="_blank" class="footer-box">🐦 @KhetConnect</a>
+      <a href="https://instagram.com" target="_blank" class="footer-box">📸 @khetconnect</a>
+      <span class="footer-box info">📍 New Delhi</span>
+      <a href="help.html" class="footer-box help">❓ Help &amp; Support</a>
+    </div>
+    <div class="footer-copyright">
+      © 2026 KhetConnect • देश के अन्नदाता का डिजिटल साथी
+    </div>
+  </footer>
+
+  <!-- Link JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

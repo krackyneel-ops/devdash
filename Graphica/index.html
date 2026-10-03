@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KhetConnect Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .login-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 24px;
+      background: #ffffff;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 384px;
+    }
+
+    .login-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: #000;
+      border-radius: 50% 0 50% 50%;
+      transform: rotate(-45deg);
+      margin-bottom: 2px;
+    }
+
+    .login-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    .login-subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .social-button {
+      width: 100%;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #111827;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .social-button:hover {
+      background: #f5f5f5;
+      border-color: #d1d5db;
+    }
+
+    .social-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .divider-text {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .forgot-link {
+      font-size: 12px;
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      color: #111827;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      outline: none;
+      background: #ffffff;
+      color: #111827;
+      font-size: 14px;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .form-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .form-input:focus {
+      border-color: #111827;
+      box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.1);
+    }
+
+    .submit-button {
+      width: 100%;
+      height: 44px;
+      margin-top: 4px;
+      border: 0;
+      border-radius: 12px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: #000000;
+    }
+
+    .signup-text {
+      margin: 24px 0 0;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .signup-link {
+      color: #111827;
+      font-weight: 500;
+      text-decoration: none;
+      text-underline-offset: 4px;
+    }
+
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .login-section {
+        padding: 48px 20px;
+      }
+
+      .login-container {
+        max-width: 100%;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html,
+      body {
+        background: #09090b;
+        color: #fafafa;
+      }
+
+      .login-section {
+        background: #09090b;
+      }
+
+      .login-title,
+      .form-label {
+        color: #fafafa;
+      }
+
+      .login-subtitle,
+      .forgot-link,
+      .signup-text {
+        color: #a1a1aa;
+      }
+
+      .social-button {
+        border-color: #27272a;
+        background: #18181b;
+        color: #fafafa;
+      }
+
+      .social-button:hover {
+        background: #27272a;
+        border-color: #3f3f46;
+      }
+
+      .divider-line {
+        background: #27272a;
+      }
+
+      .divider-text {
+        color: #71717a;
+      }
+
+      .form-input {
+        border-color: #3f3f46;
+        background: #18181b;
+        color: #fafafa;
+      }
+
+      .form-input:focus {
+        border-color: #a1a1aa;
+        box-shadow: 0 0 0 2px rgba(161, 161, 170, 0.15);
+      }
+
+      .signup-link {
+        color: #fafafa;
+      }
+
+      .logo {
+        background: #ffffff;
+      }
+
+      .submit-button {
+        background: #fafafa;
+        color: #18181b;
+      }
+
+      .submit-button:hover {
+        background: #e4e4e7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="login-section">
+    <div class="login-container">
+
+      <header class="login-header">
+        <div class="logo" aria-label="Blockus logo"></div>
+
+        <h1 class="login-title">
+          Welcome back
+        </h1>
+
+        <p class="login-subtitle">
+          Sign in to your KhetConnect account
+        </p>
+      </header>
+
+      <div class="social-buttons">
+
+        <button type="button" class="social-button">
+          <svg
+            class="social-icon"
+            viewBox="0 0 256 262"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              fill="#4285F4"
+              d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
+            />
+            <path
+              fill="#34A853"
+              d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
+            />
+            <path
+              fill="#FBBC05"
+              d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
+            />
+            <path
+              fill="#EB4335"
+              d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.973C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
+            />
+          </svg>
+
+          Continue with Google
+        </button>
+
+        <button type="button" class="social-button">
+          <svg
+            class="social-icon"
+            viewBox="0 0 256 315"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615-.35 1.116-6.599 22.563-21.757 44.716-13.104 19.153-26.705 38.235-48.13 38.63-21.05.388-27.82-12.483-51.888-12.483-24.061 0-31.582 12.088-51.51 12.871-20.68.783-36.428-20.71-49.64-39.793-27-39.033-47.633-110.3-19.928-158.406 13.763-23.89 38.36-39.017 65.056-39.405 20.307-.387 39.475 13.662 51.889 13.662 12.406 0 35.699-16.895 60.186-14.414 10.25.427 39.026 4.14 57.503 31.186-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199-15.826.636-34.962 10.546-46.314 23.828-10.173 11.763-19.082 30.589-16.678 48.633 17.64 1.365 35.66-8.964 46.64-22.262"
+            />
+          </svg>
+
+          Continue with Apple
+        </button>
+
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-text">or</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <form class="login-form">
+
+        <div class="form-group">
+          <label
+            class="form-label"
+            for="email"
+          >
+            Email
+          </label>
+
+          <input
+            class="form-input"
+            id="email"
+            type="email"
+            placeholder="you@company.com"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+
+          <div class="form-label-row">
+            <label
+              class="form-label"
+              for="password"
+            >
+              Password
+            </label>
+
+            <a
+              class="forgot-link"
+              href="#"
+            >
+              Forgot?
+            </a>
+          </div>
+
+          <input
+            class="form-input"
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+
+        </div >
+
+        <a href="home.html"><button class="submit-button"type="submit" style="pointer-events: none;">Sign in</button></a>
+
+      </form>
+
+      <p class="signup-text">
+        New here?
+        <a
+          class="signup-link"
+          href="signup.html"
+        >
+          Create an account
+        </a>
+      </p>
+
+    </div>
+  </main>
+
+</body>
+</html>

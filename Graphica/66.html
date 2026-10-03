@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Spray Machine - KhetConnect</title>
+    <link rel="stylesheet" href="66.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="checkout-wrapper">
+
+        <!-- HEADER -->
+        <header class="checkout-header">
+            <a href="javascript:history.back()" class="back-link">← Back to Equipments</a>
+            <div class="brand-logo">🌾 Khet<span>Connect</span></div>
+            <div class="secure-badge">🛡️ Genuine Agri-Tools · Farm Ready</div>
+        </header>
+
+        <!-- MAIN 2-COLUMN GRID -->
+        <div class="order-grid">
+
+            <!-- LEFT COLUMN: PRODUCT DETAILS & PRICE BREAKDOWN -->
+            <div class="product-card">
+                <div class="breadcrumb">Farming Equipments &gt; <span>Fertilizer Spray Machine</span></div>
+
+                <div class="product-image-box">
+                    <img id="productImg" src="spray.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592417817098-8f3d6ef231e5?auto=format&fit=crop&w=600&q=80';" alt="Spray Machine" class="product-img">
+                    <span class="badge-tag">⭐ Heavy Duty · 1-Yr Warranty</span>
+                </div>
+
+                <div class="product-details">
+                    <h1 class="product-title">Fertilizer &amp; Pesticide Spray Machine</h1>
+                    <p class="product-tagline">⚡ 16L Tank · High Pressure Brass Nozzle · Battery &amp; Manual Dual Operation</p>
+
+                    <div class="price-row">
+                        <span class="current-price">₹1,850</span>
+                        <span class="unit-text">/ Piece (प्रति नग)</span>
+                        <span class="mrp-striked">M.R.P: ₹2,900</span>
+                        <span class="subsidy-pill">Govt. Subsidized Agricultural Machinery</span>
+                    </div>
+                </div>
+
+                <!-- Quantity Controller -->
+                <div class="qty-section">
+                    <label class="section-label">Select Quantity (No. of Pieces):</label>
+                    <div class="qty-control">
+                        <button type="button" class="qty-btn" id="btnMinus">−</button>
+                        <input type="number" id="qtyInput" value="1" min="1" max="50">
+                        <button type="button" class="qty-btn" id="btnPlus">+</button>
+                        <span class="bag-weight">Total: <strong id="totalUnitsText">1 Piece</strong></span>
+                    </div>
+                </div>
+
+                <!-- Price Summary Box -->
+                <div class="price-summary-box">
+                    <h3>Price Breakdown (मूल्य विवरण)</h3>
+                    <div class="summary-line">
+                        <span>Rate per piece</span>
+                        <span>₹1,850.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Quantity</span>
+                        <span id="summaryQty">1 Piece</span>
+                    </div>
+                    <div class="summary-line green-text">
+                        <span>Farmer Discount Saved</span>
+                        <span id="summaryDiscount">- ₹1,050.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Doorstep Farm Delivery</span>
+                        <span class="free-text">FREE</span>
+                    </div>
+                    <hr class="divider">
+                    <div class="summary-line total-line">
+                        <span>Total Payable Amount</span>
+                        <span class="final-total" id="finalTotal">₹1,850.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: COMPLETE DELIVERY FORM & PAYMENT (FIXED) -->
+            <div class="checkout-form-card">
+                
+                <div class="form-header">
+                    <h2>📦 Enter Delivery Location</h2>
+                    <button type="button" class="gps-btn" id="gpsBtn">📍 Auto-Fill Farm Location</button>
+                </div>
+
+                <form id="orderForm">
+                    <!-- Delivery Fields Grid -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Flat / House No. / खेत संख्या</label>
+                            <input type="text" id="houseNo" placeholder="House / Khasra / Plot No..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Locality / ढाणी / मोहल्ला</label>
+                            <input type="text" id="locality" placeholder="Near Canal / Tubewell / Mandi..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Village / Town / ग्राम</label>
+                            <input type="text" id="village" placeholder="Enter Village name..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City / Mandi / तहसील</label>
+                            <input type="text" id="city" placeholder="Enter Tehsil / City..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>State / राज्य</label>
+                            <select id="state" required>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>PIN Code / पिन कोड</label>
+                            <input type="text" id="pinCode" placeholder="6-digit PIN" maxlength="6" required>
+                        </div>
+                    </div>
+
+                    <!-- Payment Mode Section -->
+                    <div class="payment-section">
+                        <h2>💳 Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="pay-option active">
+                                <input type="radio" name="paymentMethod" value="Kisan Credit Card (KCC)" checked>
+                                <span>🌾 Kisan Credit Card (KCC)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="UPI (PhonePe / GPay)">
+                                <span>📱 UPI (PhonePe / GPay)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="Cash On Delivery">
+                                <span>💵 Cash on Delivery (खेत पर नकद)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="cta-buttons">
+                        <button type="button" class="btn-bill" id="btnShowBill">📄 View Bill (बिल देखें)</button>
+                        <button type="submit" class="btn-pay" id="btnProceedPay">⚡ PROCEED TO PAY <span id="payBtnAmount">₹1,850</span></button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INVOICE / BILL MODAL POPUP -->
+    <div class="modal-overlay" id="billModal">
+        <div class="modal-content invoice-sheet">
+            <button class="close-modal" id="closeBillModal">&times;</button>
+            <div class="invoice-header">
+                <h2>🌾 KhetConnect Agri-Equipments</h2>
+                <p>Tax Invoice &amp; 1-Year Warranty Card</p>
+                <span class

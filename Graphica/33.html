@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Urea (यूरिया) - KhetConnect</title>
+    <link rel="stylesheet" href="33.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Wrapper -->
+    <div class="checkout-wrapper">
+
+        <!-- Top Header Navigation -->
+        <header class="checkout-header">
+            <a href="3.html" class="back-link">← Back to Fertilizers</a>
+            <div class="brand-logo">
+                🌾 Khet<span>Connect</span>
+            </div>
+            <div class="secure-badge">
+                🛡️ 100% DBT &amp; Govt. Subsidized
+            </div>
+        </header>
+
+        <!-- Main Order Grid -->
+        <div class="order-grid">
+
+            <!-- LEFT COLUMN: PRODUCT SHOWCASE & LIVE BILLING -->
+            <div class="product-card">
+                <div class="breadcrumb">Fertilizers &gt; <span>Urea (यूरिया)</span></div>
+
+                <div class="product-image-box">
+                    <!-- If urea.jpeg.png is in your folder, it will display. Else shows high quality fallback -->
+                    <img src="urea.jpeg.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600&q=80';" alt="Urea Bag" class="product-img">
+                    <span class="badge-tag">⭐ Quality Assured</span>
+                </div>
+
+                <div class="product-details">
+                    <h1 class="product-title">Urea (नीम लेपित यूरिया)</h1>
+                    <p class="product-tagline">🌱 Nitrogen Rich (46% N) · Fast Acting · Farm Ready</p>
+
+                    <div class="price-row">
+                        <span class="current-price">₹266</span>
+                        <span class="unit-text">/ 45 kg Bag</span>
+                        <span class="mrp-striked">M.R.P: ₹2,450</span>
+                        <span class="subsidy-pill">89% Govt. Subsidy Applied</span>
+                    </div>
+                </div>
+
+                <!-- Quantity Controller -->
+                <div class="qty-section">
+                    <label for="qtyInput" class="section-label">Select Quantity (No. of Bags):</label>
+                    <div class="qty-control">
+                        <button type="button" class="qty-btn" id="btnMinus">−</button>
+                        <input type="number" id="qtyInput" value="1" min="1" max="100">
+                        <button type="button" class="qty-btn" id="btnPlus">+</button>
+                        <span class="bag-weight">Total: <strong id="totalKgText">45 kg</strong></span>
+                    </div>
+                </div>
+
+                <!-- Live Price Breakdown Summary -->
+                <div class="price-summary-box">
+                    <h3>Price Breakdown (मूल्य विवरण)</h3>
+                    <div class="summary-line">
+                        <span>Rate per bag</span>
+                        <span>₹266.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Quantity</span>
+                        <span id="summaryQty">1 Bag (45 kg)</span>
+                    </div>
+                    <div class="summary-line subsidy-text">
+                        <span>Govt Subsidy Savings</span>
+                        <span id="summarySubsidy">- ₹2,184.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Doorstep Farm Delivery</span>
+                        <span class="free-text">FREE</span>
+                    </div>
+                    <hr class="divider">
+                    <div class="summary-line total-line">
+                        <span>Total Payable Amount</span>
+                        <span class="final-total" id="finalTotal">₹266.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: DELIVERY ADDRESS & PAYMENT -->
+            <div class="checkout-form-card">
+                
+                <div class="form-header">
+                    <h2>📦 Enter Delivery Location</h2>
+                    <button type="button" class="gps-btn" id="gpsBtn">📍 Use Current Farm Location</button>
+                </div>
+
+                <form id="orderForm">
+                    <!-- Delivery Fields Grid -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Flat / House No. / खेत संख्या</label>
+                            <input type="text" id="houseNo" placeholder="House / Khasra / Plot No..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Locality / ढाणी / मोहल्ला</label>
+                            <input type="text" id="locality" placeholder="Near Temple / Canal / Road..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Village / Town / ग्राम</label>
+                            <input type="text" id="village" placeholder="Enter Village / Town name..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City / Mandi / तहसील</label>
+                            <input type="text" id="city" placeholder="Enter Tehsil / City..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>State / राज्य</label>
+                            <select id="state" required>
+                                <option value="" disabled selected>Select State</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>PIN Code / पिन कोड</label>
+                            <input type="text" id="pinCode" placeholder="6-digit PIN code" maxlength="6" required>
+                        </div>
+                    </div>
+
+                    <!-- Payment Mode Section -->
+                    <div class="payment-section">
+                        <h2>💳 Select Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="pay-option active">
+                                <input type="radio" name="paymentMethod" value="KCC / Subsidized Account" checked>
+                                <span>🌾 Kisan Credit Card (KCC)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="UPI / PhonePe / GPay">
+                                <span>📱 UPI (PhonePe / GPay)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="Cash On Delivery (COD)">
+                                <span>💵 Cash on Delivery (खेत पर नकद)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="cta-buttons">
+                        <button type="button" class="btn-bill" id="btnShowBill">
+                            📄 View Bill (बिल देखें)
+                        </button>
+                        <button type="submit" class="btn-pay" id="btnProceedPay">
+                            ⚡ PROCEED TO PAY <span id="payBtnAmount">₹266</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INVOICE / BILL MODAL POPUP -->
+    <div class="modal-overlay" id="billModal">
+        <div class="modal-content invoice-sheet">
+            <button class="close-modal" id="closeBillModal">&times;</button>
+            <div class="invoice-header">
+                <h2>🌾 KhetConnect Agri-Services</h2>
+                <p>Tax Invoice / Delivery Challan (खाद वितरण रसीद)</p>
+                <span class="invoice-no" id="invNumber">INV-2026-8492</span>
+            </div>
+            
+            <div class="invoice-body">
+                <div class="inv-farmer-details">
+                    <strong>Delivery Address:</strong>
+                    <p id="invAddress">Village Rampur, District Meerut, UP - 250001</p>
+                </div>
+
+                <table class="inv-table">
+                    <thead>
+                        <tr>
+                            <th>Item Description</th>
+                            <th>Qty</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Neem Coated Urea (45 kg Bag)<br><small>HSRN: 31021000 | 46% Nitrogen</small></td>
+                            <td id="invQty">1 Bag</td>
+                            <td>₹266.00</td>
+                            <td id="invAmount">₹266.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="inv-summary">
+                    <p>Total Government Subsidy Saved: <strong class="green-text" id="invSubsidy">₹2,184.00</strong></p>
+                    <p class="final-pay">Total Paid/Payable: <span id="invTotal">₹266.00</span></p>
+                </div>
+            </div>
+
+            <div class="invoice-footer">
+                <button class="print-btn" onclick="window.print()">🖨️ Print / Download Bill</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Live Billing & Modals -->
+    <script src="33.js"></script>
+</body>
+</html>

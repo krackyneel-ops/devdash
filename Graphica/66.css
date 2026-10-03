@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: linear-gradient(135deg, #051d20 0%, #072e22 50%, #03140e 100%);
+    min-height: 100vh;
+    padding: 24px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Master Wrapper */
+.checkout-wrapper {
+    width: 100%;
+    max-width: 1120px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+/* Top Header */
+.checkout-header {
+    background: #092c1d;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #22c55e;
+}
+
+.back-link {
+    color: #a7f3d0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.brand-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.brand-logo span {
+    color: #4ade80;
+}
+
+.secure-badge {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* 2-Column Responsive Grid */
+.order-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    align-items: stretch;
+}
+
+/* Left Column */
+.product-card {
+    background: #f8fafc;
+    padding: 28px;
+    border-right: 1.5px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.breadcrumb span {
+    color: #16a34a;
+}
+
+.product-image-box {
+    position: relative;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+}
+
+.product-img {
+    height: 155px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.badge-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fef08a;
+    color: #854d0e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+.product-tagline {
+    font-size: 13px;
+    color: #475569;
+    margin-top: 4px;
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.current-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #16a34a;
+}
+
+.unit-text {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.mrp-striked {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.subsidy-pill {
+    width: 100%;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-top: 4px;
+}
+
+/* Quantity Control */
+.section-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    background: #e2e8f0;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.qty-btn:hover {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+.qty-control input {
+    width: 65px;
+    height: 36px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.bag-weight {
+    font-size: 13px;
+    color: #475569;
+    margin-left: 6px;
+}
+
+/* Price Summary */
+.price-summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 4px;
+}
+
+.price-summary-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.green-text {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.free-text {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.divider {
+    border: none;
+    border-top: 1px dashed #cbd5e1;
+    margin: 10px 0;
+}
+
+.total-line {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.final-total {
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: 800;
+}
+
+/* RIGHT COLUMN (FORM & PAYMENT) */
+.checkout-form-card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #ffffff;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.form-header h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.gps-btn {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #059669;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gps-btn:hover {
+    background: #10b981;
+    color: #ffffff;
+}
+
+/* Form 2-Column Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    font-family: inherit;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #22c55e;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+/* Payment Mode */
+.payment-section h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pay-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pay-option.active {
+    border-color: #22c55e;
+    background: #f0fdf4;
+    color: #14532d;
+}
+
+/* Action Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-bill {
+    flex: 1;
+    background: #ffffff;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-bill:hover {
+    background: #eff6ff;
+}
+
+.btn-pay {
+    flex: 2;
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+    transition: all 0.2s ease;
+}
+
+.btn-pay:hover {
+    background: #15803d;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.invoice-sheet {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.invoice-header {
+    border-bottom: 2px solid #22c55e;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.invoice-no {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.inv-farmer-details {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.inv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.inv-table th, .inv-table td {
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.inv-summary {
+    text-align: right;
+    font-size: 13px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.final-pay {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.print-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .order-grid {
+        grid-template-columns: 1fr;
+    }
+}

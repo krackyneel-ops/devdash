@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheat Seeds - KhetConnect</title>
+    <link rel="stylesheet" href="77.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="checkout-wrapper">
+
+        <!-- HEADER -->
+        <header class="checkout-header">
+            <a href="javascript:history.back()" class="back-link">← Back to Seeds</a>
+            <div class="brand-logo">🌾 Khet<span>Connect</span></div>
+            <div class="secure-badge">🛡️ Certified Variety · 98% Germination Rate</div>
+        </header>
+
+        <!-- MAIN 2-COLUMN GRID -->
+        <div class="order-grid">
+
+            <!-- LEFT COLUMN: PRODUCT DISPLAY & LIVE BILL -->
+            <div class="product-card">
+                <div class="breadcrumb">Seeds and Raw materials &gt; <span>Wheat Seed</span></div>
+
+                <div class="product-image-box">
+                    <img id="productImg" src="wheat.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=600&q=80';" alt="Wheat Seeds" class="product-img">
+                    <span class="badge-tag">⭐ ICAR Certified · High Yield</span>
+                </div>
+
+                <div class="product-details">
+                    <h1 class="product-title">Wheat Seeds (गेहूं के बीज)</h1>
+                    <p class="product-tagline">🌾 High Yield · Certified Variety · Quality Seeds · Better Growth</p>
+
+                    <div class="price-row">
+                        <span class="current-price">₹65</span>
+                        <span class="unit-text">/ kg</span>
+                        <span class="mrp-striked">M.R.P: ₹85 / kg</span>
+                        <span class="subsidy-pill">Govt. Subsidized Certified Seed Scheme</span>
+                    </div>
+                </div>
+
+                <!-- Quantity Controller (in Kg) -->
+                <div class="qty-section">
+                    <label class="section-label">Select Quantity (in Kg / किलोग्राम):</label>
+                    <div class="qty-control">
+                        <button type="button" class="qty-btn" id="btnMinus">−</button>
+                        <input type="number" id="qtyInput" value="40" min="5" step="5" max="500">
+                        <button type="button" class="qty-btn" id="btnPlus">+</button>
+                        <span class="bag-weight">Total: <strong id="totalKgText">40 kg (1 Bag)</strong></span>
+                    </div>
+                </div>
+
+                <!-- Live Price Breakdown -->
+                <div class="price-summary-box">
+                    <h3>Price Breakdown (मूल्य विवरण)</h3>
+                    <div class="summary-line">
+                        <span>Rate per kg</span>
+                        <span>₹65.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Quantity</span>
+                        <span id="summaryQty">40 kg</span>
+                    </div>
+                    <div class="summary-line green-text">
+                        <span>Seed Subsidy Savings</span>
+                        <span id="summaryDiscount">- ₹800.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Doorstep Farm Delivery</span>
+                        <span class="free-text">FREE</span>
+                    </div>
+                    <hr class="divider">
+                    <div class="summary-line total-line">
+                        <span>Total Payable Amount</span>
+                        <span class="final-total" id="finalTotal">₹2,600.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: DELIVERY ADDRESS & PAYMENT (COMPLETE) -->
+            <div class="checkout-form-card">
+                
+                <div class="form-header">
+                    <h2>📦 Enter Delivery Location</h2>
+                    <button type="button" class="gps-btn" id="gpsBtn">📍 Auto-Fill Farm Location</button>
+                </div>
+
+                <form id="orderForm">
+                    <!-- Delivery Fields Grid -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Flat / House No. / खेत संख्या</label>
+                            <input type="text" id="houseNo" placeholder="House / Khasra / Plot No..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Locality / ढाणी / मोहल्ला</label>
+                            <input type="text" id="locality" placeholder="Near Canal / Mandi Road..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Village / Town / ग्राम</label>
+                            <input type="text" id="village" placeholder="Enter Village name..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City / Mandi / तहसील</label>
+                            <input type="text" id="city" placeholder="Enter Tehsil / City..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>State / राज्य</label>
+                            <select id="state" required>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>PIN Code / पिन कोड</label>
+                            <input type="text" id="pinCode" placeholder="6-digit PIN" maxlength="6" required>
+                        </div>
+                    </div>
+
+                    <!-- Payment Mode Section -->
+                    <div class="payment-section">
+                        <h2>💳 Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="pay-option active">
+                                <input type="radio" name="paymentMethod" value="Kisan Credit Card (KCC)" checked>
+                                <span>🌾 Kisan Credit Card (KCC)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="UPI (PhonePe / GPay)">
+                                <span>📱 UPI (PhonePe / GPay)</span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="paymentMethod" value="Cash On Delivery">
+                                <span>💵 Cash on Delivery (खेत पर नकद)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="cta-buttons">
+                        <button type="button" class="btn-bill" id="btnShowBill">📄 View Bill (बिल देखें)</button>
+                        <button type="submit" class="btn-pay" id="btnProceedPay">⚡ PROCEED TO PAY <span id="payBtnAmount">₹2,600</span></button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INVOICE / BILL MODAL POPUP -->
+    <div class="modal-overlay" id="billModal">
+        <div class="modal-content invoice-sheet">
+            <button class="close-modal" id="closeBillModal">&times;</button>
+            <div class="invoice-header">
+                <h2>🌾 KhetConnect Certified Seeds Depot</h2>
+                <p>Seed Distribution Challan &amp; Germination Guarantee</p>
+                <span class="invoice-no" id="invNumber">INV-SD-8492</span>
+            </div>
+            
+            <div class="invoice-body">
+                <div class="inv-farmer-details">
+                    <strong>Delivery Address:</strong>
+                    <p id="invAddress">Farm Location, Mandi Center</p>
+                </div>
+
+                <table class="inv-table">
+                    <thead>
+                        <tr><th>Seed Variety</th><th>Qty</th><th>Rate</th><th>Amount</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wheat Seeds (गेहूं के बीज) - Certified</td>
+                            <td id="invQty">40 kg</td>
+                            <td>₹65.00</td>
+                            <td id="invAmount">₹2,600.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="inv-summary">
+                    <p>Total Seed Subsidy Saved: <strong class="green-text" id="invDiscount">₹800.00</strong></p>
+                    <p class="final-pay">Total Payable: <span id="invTotal">₹2,600.00</span></p>
+                </div>
+            </div>
+
+            <div class="invoice-footer">
+                <button class="print-btn" onclick="window.print()">🖨️ Print / Download Bill</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="77.js"></script>
+</body>
+</html>

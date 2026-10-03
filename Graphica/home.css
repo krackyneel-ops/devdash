@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#mainbody {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #051d20 0%, #07291e 50%, #03140e 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ================= 1. AMBIENT CURSOR GLOW TORCH ================= */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, rgba(6, 182, 212, 0.08) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* ================= 2. FIREFLIES PARTICLES CANVAS ================= */
+#firefliesCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ================= 3. LIVE TICKER BAR ================= */
+.live-ticker-bar {
+  width: 100%;
+  background: rgba(3, 15, 10, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 8px 20px;
+  font-size: 13px;
+  color: #cbd5e1;
+  position: relative;
+  z-index: 50;
+}
+
+.ticker-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pulse-live {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  animation: pulseBadge 1.8s infinite;
+}
+
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.ticker-sep {
+  color: #475569;
+}
+
+.green-glow {
+  color: #4ade80;
+}
+
+/* ================= 4. HERO SECTION ================= */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85');
+  background-size: cover;
+  background-position: center bottom;
+  filter: brightness(0.45);
+  z-index: 1;
+  transition: transform 0.1s ease-out; /* Parallax shift */
+}
+
+.hero-dim-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(5, 29, 32, 0.65) 0%, 
+    rgba(7, 41, 30, 0.4) 45%, 
+    rgba(3, 20, 14, 0.95) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Profile Badge (Top Right) */
+.profile-badge {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  padding: 6px 14px 6px 8px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 30;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.profile-badge:hover {
+  transform: translateY(-2px);
+  border-color: #4ade80;
+}
+
+.profile-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #22c55e;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-handle {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Hero Content */
+.hero-sketch-layout {
+  position: absolute;               
+  top: 60px;                       
+  left: 50%;
+  transform: translateX(-50%);     
+  width: 92%;
+  max-width: 1050px;
+  z-index: 10;                     
+  text-align: center;
+}
+
+.main-title {
+  font-size: clamp(34px, 4.8vw, 56px);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.main-title span {
+  background: linear-gradient(135deg, #4ade80 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub-title {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  color: #e2e8f0;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 3 Stat Cards */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  flex: 1;
+  max-width: 280px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  padding: 16px 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  border-color: #4ade80;
+  box-shadow: 0 18px 35px rgba(34, 197, 94, 0.35);
+}
+
+.stat-icon {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.stat-highlight {
+  font-size: 19px;
+  font-weight: 800;
+  color: #4ade80;
+  line-height: 1.2;
+}
+
+.stat-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-top: 2px;
+}
+
+/* Slogan Line */
+.slogan-line {
+  font-size: clamp(17px, 2.2vw, 23px);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+  margin-top: 15px;
+}
+
+.slogan-line .hindi-accent {
+  color: #fde047;
+  font-weight: 800;
+  border-bottom: 2px solid #fde047;
+  padding-bottom: 2px;
+}
+
+/* ================= 5. THE 9 SERVICES BUTTONS GRID ================= */
+.services-section {
+  max-width: 1050px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  justify-items: center;
+}
+
+.service-link {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Liquid Wave Button */
+.button {
+  position: relative;
+  width: 100%;
+  max-width: 290px;
+  height: 68px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 2px solid #22c55e;
+  border-radius: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.22);
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.button span {
+  position: relative;
+  z-index: 10;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  transition: color 0.4s ease;
+  pointer-events: none;
+}
+
+/* Liquid Waves */
+.button::before {
+  content: '';
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  background-color: #16a34a;
+  border-radius: 43%;
+  left: 50%;
+  top: 105%;
+  transform: translateX(-50%) rotate(0deg);
+  transition: top 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: wave-spin 6s linear infinite;
+  z-index: 1;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background-color: rgba(74, 222, 128, 0.65);
+  border-radius: 40%;
+  left: 50%;
+  top: 105%;
+  transform: translateX(-50%) rotate(0deg);
+  transition: top 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: wave-spin 9s linear infinite reverse;
+  z-index: 1;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  border-color: #15803d;
+  box-shadow: 0 14px 28px rgba(34, 197, 94, 0.5);
+}
+
+.button:hover::before { top: -125px; }
+.button:hover::after { top: -130px; }
+
+.button:hover span {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes wave-spin {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Ripple Click Wave */
+.click-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: rippleAnimation 0.6s linear;
+  pointer-events: none;
+  z-index: 20;
+}
+
+@keyframes rippleAnimation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ================= 6. COMPACT FULL-WIDTH FOOTER ================= */
+.footer-bar {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 30px;
+  padding: 14px 20px 10px;
+  background-color: #030f0a;
+  border-top: 2px solid #22c55e;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.footer-header {
+  margin-bottom: 8px;
+}
+
+.footer-brand {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footer-brand span {
+  color: #4ade80;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-left: 6px;
+}
+
+.footer-links-row {
+  width: 96%;
+  max-width: 1250px;
+  margin: 0 auto 8px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-box {
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #f1f5f9;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.footer-box:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #22c55e;
+  color: #4ade80;
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ================= 7. RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-row { flex-wrap: wrap; }
+  .stat-card { max-width: 48%; }
+}
+
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .stats-row { flex-direction: column; align-items: center; }
+  .stat-card { width: 100%; max-width: 100%; }
+  .hero-container { height: 750px; }
+  .footer-links-row { flex-direction: column; }
+  .footer-box { width: 100%; }
+}

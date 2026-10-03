@@ -1,0 +1,121 @@
+
+
+/* ================= 1. SYSTEM FONTS & PAGE SETUP ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 820px;
+  /* Microsoft Segoe UI & Amazon system typography */
+  font-family: 'Segoe UI', Arial, -apple-system, sans-serif;
+  color: #0f1111;
+  overflow-x: hidden;
+
+  /* TWO-TONE BACKGROUND:
+     - Above 215px (Above the line): Classic Amazon/Microsoft Deep Navy (#14213d)
+     - Below 215px (Below the line): Crisp White / Enterprise Light (#f8fafc)
+  */
+  background: linear-gradient(
+    to bottom,
+    #14213d 0px,
+    #14213d 215px,
+    #f8fafc 215px,
+    #f8fafc 100%
+  );
+  background-repeat: no-repeat;
+}
+
+/* ================= 2. HEADER SECTION (ABOVE THE LINE) ================= */
+
+/* Main Title (span class="1") */
+span[class="1"] {
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  padding-top: 30px;
+  letter-spacing: 0.3px;
+  position: relative;top: 40px;
+}
+
+/* Subtitle (span class="2") */
+span[class="2"] {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  color: #e5e7eb;
+  margin-top: 4px;
+}
+
+/* Hindi Subtitle (span class="3") */
+span[class="3"] {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #93c5fd; /* Soft professional blue accent */
+  margin-top: 4px;
+}
+
+/* Clean Divider Line (hr) */
+hr {
+  border: none;
+  border-top: 1.5px solid #334155;
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ================= 3. DOCTOR BUTTONS (CLASSIC AMAZON / MICROSOFT CARDS) ================= */
+
+/* Clean link setup */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Doctor Card Buttons */
+.button {
+  /* Dimensions to fit your 10%, 40%, 70% columns with ZERO overlap */
+  width: 25vw;
+  min-width: 450px;
+  max-width: 60px;
+  height: 125px;
+  padding: 14px 16px;
+
+  /* Classic Amazon/Microsoft Card Styling */
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;          /* Classic Amazon card border */
+  border-radius: 8px;                 /* Classic subtle rounded corners */
+  cursor: pointer;
+
+  /* Typography & Layout */
+  color: #0f1111;                     /* High-contrast Amazon black */
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.55;                  /* Clean line spacing between details */
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.08); /* Standard soft card shadow */
+
+  /* Smooth classic transition */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* ================= 4. HOVER & INTERACTION ================= */
+
+/* Classic Corporate Hover: Subtle lift & Amazon/Microsoft blue border */
+.button:hover {
+  transform: translateY(-3px);
+  border-color: #007185;              /* Amazon Teal-Blue active border */
+  box-shadow: 0 6px 16px rgba(15, 17, 17, 0.14);
+}
+
+/* Classic Active Click State */
+.button:active {
+  transform: translateY(0);
+  background-color: #f7fafa;
+  border-color: #004b57;
+  box-shadow: 0 1px 3px rgba(15, 17, 17, 0.1);
+}
